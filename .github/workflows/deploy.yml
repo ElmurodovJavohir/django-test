@@ -38,11 +38,11 @@ jobs:
 
     - name: Accept host fingerprint
       run: |
-        ssh -o StrictHostKeyChecking=accept-new root@test.django-up.com "ls"
+        ssh -o StrictHostKeyChecking=accept-new root@173.212.216.17 "ls"
 
     - name: Run up
       run: |
-        pipenv run python manage.py up test.django-up.com --email=brenton@brntn.me
+        pipenv run python manage.py up 173.212.216.17 --email=brenton@brntn.me
       env:
         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
 
